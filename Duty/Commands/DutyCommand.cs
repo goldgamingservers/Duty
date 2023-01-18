@@ -46,14 +46,18 @@ namespace DutyPlugin.Commands
                 return;
             }
 
+            UnturnedPlayer player = (UnturnedPlayer) caller;
+
             if (group.Members.Contains(caller.Id))
             {
                 R.Permissions.RemovePlayerFromGroup(group.Id, caller);
+                if (dutyGroup.Admin) player.Admin(false);
                 UnturnedChat.Say(DutyPlugin.Instance.Translate("GoneOffDuty", group.DisplayName, caller.DisplayName), DutyPlugin.Instance.MessageColor);
             }
             else
             {
                 R.Permissions.AddPlayerToGroup(group.Id, caller);
+                if (dutyGroup.Admin) player.Admin(true);
                 UnturnedChat.Say(DutyPlugin.Instance.Translate("GoneOnDuty", group.DisplayName, caller.DisplayName), DutyPlugin.Instance.MessageColor);
             }
 

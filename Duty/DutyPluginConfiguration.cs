@@ -22,7 +22,14 @@ namespace DutyPlugin
                 new DutyGroup()
                 {
                     GroupId = "moderator",
-                    Permission = "duty.moderator"
+                    Permission = "duty.moderator",
+                    Admin = false
+                },
+                new DutyGroup()
+                {
+                    GroupId = "admin",
+                    Permission = "duty.admin",
+                    Admin = true
                 }
             };
         }

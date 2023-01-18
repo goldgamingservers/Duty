@@ -10,5 +10,6 @@ namespace DutyPlugin.Models
     {
         public string GroupId { get; set; }
         public string Permission { get; set; }
+        public bool Admin { get; set; }
     }
 }
