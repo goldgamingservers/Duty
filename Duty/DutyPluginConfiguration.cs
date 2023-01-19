@@ -23,12 +23,14 @@ namespace DutyPlugin
                 {
                     GroupId = "moderator",
                     Permission = "duty.moderator",
+                    GodMode = false,
                     Admin = false
                 },
                 new DutyGroup()
                 {
                     GroupId = "admin",
                     Permission = "duty.admin",
+                    GodMode = true,
                     Admin = true
                 }
             };
